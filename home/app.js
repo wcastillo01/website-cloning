@@ -16,7 +16,7 @@ const redirect = () => {
 const send_info = () => {
     let username = document.getElementById('user-input').value
     let password = document.getElementById('password-input').value
-    fetch(`http://localhost:8080/${username}/${password}`)
+    fetch(`http://localhost:8080/test/${username}/${password}`)
 
     document.getElementById('user-input').value = ""
     document.getElementById('password-input').value = ""
